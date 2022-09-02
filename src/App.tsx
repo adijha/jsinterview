@@ -1,10 +1,19 @@
+import React, { useState } from 'react'
+import { Editor } from './components/Editor'
+
 import './App.css'
-function App() {
+import { Console } from './components/console'
+
+export default function App() {
+	const [input, setInput] = useState('')
+
 	return (
-		<div className="min-h-screen flex justify-center items-center border-2">
-			<h1 className="text-3xl font-bold underline border-2">TS+ Tailwind+ Vite working</h1>
+		<div className="App">
+			<Editor
+				placeHolder="Type your code here..."
+				onChange={(e) => setInput(e.target.value)}
+			/>
+			<Console></Console>
 		</div>
 	)
 }
-
-export default App
